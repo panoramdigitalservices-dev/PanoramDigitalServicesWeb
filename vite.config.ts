@@ -9,6 +9,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
+    // Static SPA build for GitHub Pages (no server runtime available there).
+    // Prerenders an HTML shell so an index.html exists for static hosting.
+    spa: { enabled: true },
   },
   vite: {
     base: "/PanoramDigitalServicesWeb/", 
